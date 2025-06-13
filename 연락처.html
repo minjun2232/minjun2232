@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>연락처</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    button {
+      font-size: 1.5rem;
+      padding: 12px 25px;
+      cursor: pointer;
+    }
+    .copy-text {
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav-center">
+    <a href="index.html" class="nav-logo">MyPortfolio</a>
+    <div class="nav-links">
+      <a href="스킬.html">나의 스킬</a>
+      <a href="프로젝트.html">프로젝트</a>
+      <a href="희망직무.html">희망 직무</a>
+      <a href="연락처.html" class="active">연락처</a>
+    </div>
+  </nav>
+
+  <main class="main-container">
+    <h2>연락처</h2>
+    <p><strong>이메일:</strong> <span id="email" class="copy-text">gimminjun772@gmail.com</span></p>
+    <p><strong>학번:</strong> 20252232</p>
+    <p><strong>전화번호:</strong> <span id="phone" class="copy-text">010-4025-6726</span></p>
+    <button onclick="location.href='index.html'">홈으로 돌아가기</button>
+  </main>
+
+  <script>
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert(text + " 복사되었습니다!");
+      });
+    }
+
+    document.getElementById("email").addEventListener("click", function () {
+      copyToClipboard(this.textContent);
+    });
+
+    document.getElementById("phone").addEventListener("click", function () {
+      copyToClipboard(this.textContent);
+    });
+  </script>
+</body>
+</html>

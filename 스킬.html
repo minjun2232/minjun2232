@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>나의 스킬</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .main-container h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .skill-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skill-list li {
+      font-size: 1.8rem; /* 글자 크기 키움 */
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .skill-list li.visible {
+      opacity: 1;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav-center">
+    <a href="index.html" class="nav-logo">MyPortfolio</a>
+    <div class="nav-links">
+      <a href="스킬.html" class="active">나의 스킬</a>
+      <a href="프로젝트.html">프로젝트</a>
+      <a href="희망직무.html">희망 직무</a>
+      <a href="연락처.html">연락처</a>
+    </div>
+  </nav>
+
+  <main class="main-container">
+    <h2>나의 스킬</h2>
+    <ul class="skill-list">
+      <li id="skill1">C프로그래밍(공부중)</li>
+      <li id="skill2">웹스크립트 프로그래밍(공부중)</li>
+    </ul>
+    <button onclick="location.href='index.html'">홈으로 돌아가기</button>
+  </main>
+
+  <script>
+    window.onload = function() {
+      const skills = document.querySelectorAll('.skill-list li');
+      skills.forEach((li, index) => {
+        setTimeout(() => {
+          li.classList.add('visible');
+        }, index * 1500);
+      });
+    };
+  </script>
+</body>
+</html>

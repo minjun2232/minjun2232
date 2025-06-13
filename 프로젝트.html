@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>프로젝트</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .project-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .project-card {
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #fff;
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: scale(1.03);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .project-info {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .project-details {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background: #222;
+      color: #fff;
+      border-radius: 10px;
+      border: 1px solid #444;
+    }
+
+    /* 홈으로 돌아가기 버튼 스타일 */
+    button {
+      margin-top: 30px;
+      padding: 12px 25px;
+      font-size: 1.2rem;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav-center">
+    <a href="index.html" class="nav-logo">MyPortfolio</a>
+    <div class="nav-links">
+      <a href="스킬.html">나의 스킬</a>
+      <a href="프로젝트.html" class="active">프로젝트</a>
+      <a href="희망직무.html">희망 직무</a>
+      <a href="연락처.html">연락처</a>
+    </div>
+  </nav>
+
+  <main class="main-container">
+    <h2>프로젝트 5개</h2>
+
+    <div class="project-gallery">
+      <div class="project-card" onclick="showDetails(1)">
+        <img src="images/ver1.png" alt="고양이와 수프 버전1">
+        <div class="project-info">
+          <h4>고양이와 수프 버전1</h4>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="showDetails(2)">
+        <img src="images/ver2.jpg" alt="고양이와 수프 버전2">
+        <div class="project-info">
+          <h4>고양이와 수프 버전2</h4>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="showDetails(3)">
+        <img src="images/boom.png" alt="폭탄피하기">
+        <div class="project-info">
+          <h4>폭탄피하기</h4>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="showDetails(4)">
+        <img src="images/rock.png" alt="가위 바위 보">
+        <div class="project-info">
+          <h4>가위 바위 보</h4>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="showDetails(5)">
+        <img src="images/clock.png" alt="다른 나라 시간 표시시">
+        <div class="project-info">
+          <h4>다른 나라 시간 표시</h4>
+        </div>
+      </div>
+    </div>
+
+    <div id="details-1" class="project-details">
+      <h3>고양이와 수프 버전1</h3>
+      <p>친밀감에 따라 고양이가 수프를 만들어 주는 게임(c프로그래밍으로 구현)</p>
+    </div>
+
+    <div id="details-2" class="project-details">
+      <h3>고양이와 수프 버전2</h3>
+      <p>기분과 친밀도에 따라서 CP를 생산하고 놀이기구나 장난감을 구매해주기(c프로그래밍으로 구현)</p>
+    </div>
+
+    <div id="details-3" class="project-details">
+      <h3>폭탄피하기(예정)</h3>
+      <p>정사각형판 안에서 폭탄을 피하는 게임</p>
+    </div>
+
+    <div id="details-4" class="project-details">
+      <h3>가위 바위 보 게임</h3>
+      <p>컴퓨터와 가위 바위 보 게임하기(c프로그래밍으로 구현)</p>
+    </div>
+
+    <div id="details-5" class="project-details">
+      <h3>다른 나라 시간</h3>
+      <p>원하는 나라 선택시 해당 나라의 시간과 날짜 표시</p>
+    </div>
+
+    <button onclick="location.href='index.html'">홈으로 돌아가기</button>
+  </main>
+
+  <script>
+    function showDetails(id) {
+      const allDetails = document.querySelectorAll('.project-details');
+      allDetails.forEach(detail => detail.style.display = 'none');
+
+      const target = document.getElementById('details-' + id);
+      if (target) {
+        target.style.display = 'block';
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+</body>
+</html>

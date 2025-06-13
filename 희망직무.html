@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>희망 직무</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .main-container p {
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .main-container button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      font-size: 1.2rem;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .main-container button:hover {
+      background-color: #0056b3;
+    }
+
+    .color-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .color-button:hover {
+      background-color: #666;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav-center">
+    <a href="index.html" class="nav-logo">MyPortfolio</a>
+    <div class="nav-links">
+      <a href="스킬.html">나의 스킬</a>
+      <a href="프로젝트.html">프로젝트</a>
+      <a href="희망직무.html" class="active">희망 직무</a>
+      <a href="연락처.html">연락처</a>
+    </div>
+  </nav>
+
+  <main class="main-container">
+    <h2>희망 직무</h2>
+    <p>백엔드 개발자</p>
+    <p>보안과 게임개발에 깊은 관심이 있습니다.</p>
+    <p>데이터 처리와 서버 개발에 강한 흥미를 가지고 지속적으로 학습하고 있습니다.</p>
+    <button onclick="location.href='index.html'">홈으로 돌아가기</button>
+  </main>
+
+  <button class="color-button" onclick="changeTextColor()">색상 바꾸기</button>
+
+  <script>
+    function changeTextColor() {
+      const colors = ['red', 'blue', 'green', 'purple', 'orange', 'teal', 'brown'];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.querySelectorAll('.main-container p').forEach(p => {
+        p.style.color = randomColor;
+      });
+    }
+  </script>
+</body>
+</html>
